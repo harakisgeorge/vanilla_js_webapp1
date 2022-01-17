@@ -1,0 +1,173 @@
+Delivered-To: harakisgeorge@gmail.com
+Received: by 2002:ab3:138d:0:0:0:0:0 with SMTP id 13csp1333668ltz;
+        Sat, 8 Jan 2022 11:13:42 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJyIJr2EeRdvEBNCwh5W/249GlZI3Dkgbbd7NjREf21zZjQVhs1zXvcbGABhXsaq1hePT3Cc
+X-Received: by 2002:a17:906:f753:: with SMTP id jp19mr11886045ejb.633.1641669222318;
+        Sat, 08 Jan 2022 11:13:42 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1641669222; cv=none;
+        d=google.com; s=arc-20160816;
+        b=v1d2+X4az+FGBnQxay9YFa5we+BW6msbU06VMEAxC7Fdl4c9iqjtw/Lr8fPZMgf8U0
+         1nc2ZiopehSIzwUVvxa22O6IARPa3GfCSJfg7d+TL+aVg+0ODQCeJDEgM5zGXymofdWP
+         SdH80DrP/5vFWp5Jwadoj9/o2r4wqLAjddGFGSEW7TOzGRqw0NYz7LGsYR2bfvmalOjQ
+         vLxLptTNhTQgcU0wsPe4W6uc+Zy2M2w804W1/iUcRVK211ZwTnZsx9EAeZPvd4vh6FPb
+         UNH5yTsCOsgkDT7IK36cN9NrpccmkbGpV1PT1+daJT6f04A36p+H0WVaYl/uQOxeISJf
+         gheQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:to:from:subject:date:message-id:dkim-signature;
+        bh=5LWyH03EIcSxMkKlhUyPw8wJyIah9LSdSlNc/ye3SqQ=;
+        b=IFag8VDB7HR32Nbr2x6nJbeSngCSNBUbjfycWxstNBPuPuFSfn972stDfIO9PjdCO+
+         3e5UvOI1wavVvhT9C2ZeMyeXfwwa0NdHI8mZY9/GvR73Uxsf2uHxvWY3j+qGgcHdWAHy
+         7ryOQ6sXNBszY4fiM1CuPSbjZVEVJYUni7LSKvVrQcIj01zX/bt+RtNHTGz7epVyb8d2
+         UQ5VnBY490PynRYI0/kzQ9ver31M52ditxeaj3Ugi4RYsJYaZcXMqQFg96Pfo8M4rSOF
+         AwwbKxIvTZEAgJJF+R9IxsHZJsMVn7XDXteYYGXYHSLNJ4vxyqAcFcjv9YT04GI3nGuh
+         6HLw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@entrynorway.no header.s=cim header.b=GnVFDBYY;
+       spf=pass (google.com: domain of noreply@entrynorway.no designates 185.38.121.22 as permitted sender) smtp.mailfrom=noreply@entrynorway.no;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=entrynorway.no
+Return-Path: <noreply@entrynorway.no>
+Received: from msg-out.onevoice.no (msg-out.onevoice.no. [185.38.121.22])
+        by mx.google.com with ESMTPS id w16si999437ejv.537.2022.01.08.11.13.42
+        for <harakisgeorge@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 08 Jan 2022 11:13:42 -0800 (PST)
+Received-SPF: pass (google.com: domain of noreply@entrynorway.no designates 185.38.121.22 as permitted sender) client-ip=185.38.121.22;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@entrynorway.no header.s=cim header.b=GnVFDBYY;
+       spf=pass (google.com: domain of noreply@entrynorway.no designates 185.38.121.22 as permitted sender) smtp.mailfrom=noreply@entrynorway.no;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=entrynorway.no
+Received: from localhost (localhost [127.0.0.1])
+	by msg-out.onevoice.no (Postfix) with ESMTP id E082422A4B
+	for <harakisgeorge@gmail.com>; Sat,  8 Jan 2022 20:13:41 +0100 (CET)
+Received: from msg-out.onevoice.no ([127.0.0.1])
+	by localhost (msg-out2.onevoice.no [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id GJ8RedhQpeTN for <harakisgeorge@gmail.com>;
+	Sat,  8 Jan 2022 20:13:41 +0100 (CET)
+Received: from reg.entrynorway.no (unknown [IPv6:2a04:6fb0:66::105])
+	by msg-out.onevoice.no (Postfix) with ESMTP id D6E0C20111
+	for <harakisgeorge@gmail.com>; Sat,  8 Jan 2022 20:13:41 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=entrynorway.no;
+	s=cim; t=1641669221;
+	bh=rMru9Wy2QnES2mhvHX0+6Bmoff59Oz3ZdvF37wmNOQk=;
+	h=Date:Subject:From:To:From;
+	b=GnVFDBYY1N1nNOHpRs25Ki+0FL2zCXrVMU1teIR+qXJQi0iesDILl+21KSymu/64O
+	 Ppvnt/p5/gyGlhNrqwl7n5EAwMeorlQirNAxPNGdE9FYkvU19JEnt8g2xNtRVN24AC
+	 f7li4EKyfe/GYggxs6MLffnmwiQNwA9+IwEWwjM4=
+Message-ID: <75e75962e5a8c835c97b88728184c681@reg.entrynorway.no>
+Date: Sat, 08 Jan 2022 20:13:41 +0100
+Subject: Your entry into Norway has been registered.
+From: noreply@entrynorway.no
+To: "" <harakisgeorge@gmail.com>
+MIME-Version: 1.0
+Content-Type: multipart/related;
+ boundary="_=_swift_v4_1641669221_51baf213ebd338f295a8cf95a7bdf4c2_=_"
+
+
+--_=_swift_v4_1641669221_51baf213ebd338f295a8cf95a7bdf4c2_=_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+            <html>
+              <head>
+                 <style type=
+=3D"text/css">
+                    body
+                      {
+     =
+                    font-size: 10pt;
+                         color: blac=
+k;
+                         font-family: sans-serif;
+                  =
+    }
+                      td
+                      {
+              =
+            font-family: sans-serif;
+                          font-size:=
+ 10pt;
+                          color: black;
+                      }=
+
+                     =20
+                 </style>
+                 <m=
+eta http-equiv=3D"content-type" content=3D"text/html; charset=3DUTF-8">
+ =
+             </head>
+              <body><h2>Your entry into Norway has b=
+een registered.</h2> <br/>Your reference code is: 098.0047.4.3147317<br/><b=
+r/>Municipality: Oslo<br/><br/>Name: Georgios Harakis <br/>Date of arrival:=
+ 10.01.2022<br/><br/>NO: Koronasertifikat: Ja<br/>Har oppgitt: Testplikt<br=
+/><img alt=3D'cid:8605149b75d633e2e8880cce04f90cb5@reg.entrynorway.no' src=
+=3D'cid:8605149b75d633e2e8880cce04f90cb5@reg.entrynorway.no' /><br/><br/><b=
+r/>You can log in using the same mobile number, email or ID-Porten as last =
+time, in order to check or edit the information you provided.
+           =
+     </body>
+            </html>
+
+--_=_swift_v4_1641669221_51baf213ebd338f295a8cf95a7bdf4c2_=_
+Content-Type: image/png; name=embed_T8WHpl.png
+Content-Transfer-Encoding: base64
+Content-ID: <8605149b75d633e2e8880cce04f90cb5@reg.entrynorway.no>
+Content-Disposition: inline; filename=embed_T8WHpl.png
+
+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
+AElFTkSuQmCC
+
+--_=_swift_v4_1641669221_51baf213ebd338f295a8cf95a7bdf4c2_=_--
+
