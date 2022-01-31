@@ -54,6 +54,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  overflow-x: hidden;
+}
 body {
   font-family: "Sanchez", serif;
   background: rgb(252, 249, 251);
@@ -258,6 +261,16 @@ section.section-one-half {
   font-size: 1.15rem;
   color: rgb(53, 53, 53);
 }
+
+@media only screen and (max-width: 768px) {
+  .section-two-content {
+    margin-left: -320px;
+  }
+  .section-two-title {
+    margin-left: -290px;
+  }
+}
+
 #background-img2 {
   width: 600px;
   margin-top: -300px;
@@ -358,6 +371,12 @@ section.section-one-half {
   justify-content: center;
 }
 
+@media only screen and (max-width: 768px) {
+  .section-six-part2 {
+    margin-left: -340px;
+  }
+}
+
 /* section seven */
 .section-seven {
   margin-top: 30px;
@@ -434,6 +453,7 @@ section.section-one-half {
   width: 250px;
   height: 35px;
   border: transparent;
+  background: white;
 }
 /*footer */
 
